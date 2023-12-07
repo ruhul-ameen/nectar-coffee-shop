@@ -53,7 +53,7 @@ const Contact = () => {
           </div>
           <div>
             <form onSubmit={handleSubmit} className="max-w-md mx-auto mt-8">
-              <div className="flex gap-8">
+              <div className="flex flex-col md:flex-row gap-2 md:gap-8">
                 <div className="mb-4">
                   <label
                     htmlFor="name"
