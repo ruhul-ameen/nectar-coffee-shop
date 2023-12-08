@@ -1,23 +1,24 @@
 "use client";
-
 import React, { useState } from "react";
 
-interface ContactFormData {
+interface SignUpFormData {
   firstName: string;
   lastName: string;
   email: string;
   mobile: string;
+  password: string;
 }
 
-const Contact: React.FC = () => {
-  const initialFormData: ContactFormData = {
+const SignUp = () => {
+  const initialFormData: SignUpFormData = {
     firstName: "",
     lastName: "",
     email: "",
     mobile: "",
+    password: "",
   };
 
-  const [formData, setFormData] = useState<ContactFormData>(initialFormData);
+  const [formData, setFormData] = useState<SignUpFormData>(initialFormData);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({
@@ -32,41 +33,11 @@ const Contact: React.FC = () => {
     console.log("Form submitted:", formData);
     setFormData(initialFormData);
   };
-
   return (
-    <section className="my-32">
-      <h1 className="text-3xl font-bold text-center my-10 uppercase">
-        Contact us
-      </h1>
+    <section className="my-14">
+      <h1 className="text-3xl font-bold text-center my-5 uppercase">Sign Up</h1>
       <div className="flex justify-center items-center">
-        <div className="max-w-max p-10 flex flex-col-reverse md:flex-row items-center justify-center gap-28 border-2 border[#C08261] rounded">
-          <div>
-            <div className="mb-8">
-              <h3 className="text-sm font-semibold uppercase mb-2">Email</h3>
-              <p className="text-xs text-gray-300">nectarcoffee@gmail.com</p>
-            </div>
-            <div className="mb-8">
-              <h3 className="text-sm font-semibold uppercase mb-2">phone</h3>
-              <p className="text-xs text-gray-300 mb-1">+880-000-000-0000</p>
-              <p className="text-xs text-gray-300 mb-1">+880-000-000-0000</p>
-            </div>
-            <div>
-              <h3 className="text-sm font-semibold uppercase mb-2">Address</h3>
-              <p className="text-xs text-gray-300 capitalize mb-1">
-                Mouchak, kaliakair, Gazipur
-              </p>
-              <p className="text-xs text-gray-300 capitalize mb-1">
-                shafipur , kaliakair, Gazipur
-              </p>
-              <p className="text-xs text-gray-300 capitalize mb-1">
-                Konabari, kaliakair, gazipur
-              </p>
-              <p className="text-xs text-gray-300 capitalize">
-                Chandra, kaliakair, gazipur
-              </p>
-            </div>
-          </div>
-
+        <div className="max-w-max px-14 py-10 flex flex-col-reverse md:flex-row items-center justify-center gap-28 border-2 border[#C08261] rounded">
           <form className="max-w-md mx-auto mt-8" onSubmit={handleSubmit}>
             <div className="flex flex-col md:flex-row gap-2 md:gap-8">
               <div className="mb-4">
@@ -138,12 +109,29 @@ const Contact: React.FC = () => {
                 required
               />
             </div>
+            <div className="mb-4">
+              <label
+                htmlFor="password"
+                className="block text-white text-base font-bold mb-2"
+              >
+                Password
+              </label>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                value={formData.password}
+                onChange={handleChange}
+                className="w-full text-[#6C3428] font-bold outline-none border rounded-md p-2"
+                required
+              />
+            </div>
             <div className="flex items-center justify-center">
               <button
                 type="submit"
                 className="text-white px-6 py-2 rounded-md border-2 border-white hover:bg-white hover:text-red-900 uppercase"
               >
-                Submit
+                Sign Up
               </button>
             </div>
           </form>
@@ -153,4 +141,4 @@ const Contact: React.FC = () => {
   );
 };
 
-export default Contact;
+export default SignUp;

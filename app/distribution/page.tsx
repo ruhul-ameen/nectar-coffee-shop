@@ -1,4 +1,5 @@
 import ServiceCategory from "@/components/ServiceCategory";
+import { Service } from "@/types";
 
 const services = [
   {

@@ -49,7 +49,7 @@ const Faqs = () => {
       </div>
       <div className="flex items-center justify-center mt-10">
         <button className="border rounded-sm px-4 py-2 text-white hover:text-[#361500] hover:bg-white font-semibold">
-          <Link href={"/contact"}>Ask us</Link>
+          <Link href={"/signup"}>Ask us</Link>
         </button>
       </div>
     </section>

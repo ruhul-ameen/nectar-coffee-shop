@@ -41,8 +41,10 @@ const Navbar = () => {
               </Link>
             </div>
             <div className="flex items-center gap-4 xl:gap-14">
-              <p className="link">000-000-000</p>
-              <Link href={"/touch"} className="link">
+              <Link href={"/signin"} className="link">
+                Order Now
+              </Link>
+              <Link href={"/signup"} className="link">
                 Get in touch
               </Link>
             </div>
