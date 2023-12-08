@@ -2,22 +2,37 @@
 
 import React, { useState } from "react";
 
-const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: "",
+interface ContactFormData {
+  firstName: string;
+  lastName: string;
+  email: string;
+  mobile: string;
+}
+
+const Contact: React.FC = () => {
+  const initialFormData: ContactFormData = {
+    firstName: "",
+    lastName: "",
     email: "",
-    message: "",
-  });
-
-  const handleChange = (e: any) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    mobile: "",
   };
 
-  const handleSubmit = (e: any) => {
+  const [formData, setFormData] = useState<ContactFormData>(initialFormData);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Add your logic to handle the form submission
+
     console.log("Form submitted:", formData);
+    setFormData(initialFormData);
   };
+
   return (
     <section className="my-32">
       <h1 className="text-3xl font-bold text-center my-10 uppercase">
@@ -51,57 +66,21 @@ const Contact = () => {
               </p>
             </div>
           </div>
-          <div>
-            <form onSubmit={handleSubmit} className="max-w-md mx-auto mt-8">
-              <div className="flex flex-col md:flex-row gap-2 md:gap-8">
-                <div className="mb-4">
-                  <label
-                    htmlFor="name"
-                    className="block text-white text-base font-bold mb-2"
-                  >
-                    First Name
-                  </label>
-                  <input
-                    type="text"
-                    id="first-name"
-                    name="first-name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    className="w-full text-[#6C3428] font-bold outline-none border rounded-md p-2"
-                    required
-                  />
-                </div>
-                <div className="mb-4">
-                  <label
-                    htmlFor="name"
-                    className="block text-white text-base font-bold mb-2"
-                  >
-                    Last Name
-                  </label>
-                  <input
-                    type="text"
-                    id="last-name"
-                    name="last-name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    className="w-full text-[#6C3428] font-bold outline-none border rounded-md p-2"
-                    required
-                  />
-                </div>
-              </div>
 
+          <form className="max-w-md mx-auto mt-8" onSubmit={handleSubmit}>
+            <div className="flex flex-col md:flex-row gap-2 md:gap-8">
               <div className="mb-4">
                 <label
-                  htmlFor="email"
+                  htmlFor="firstName"
                   className="block text-white text-base font-bold mb-2"
                 >
-                  Email
+                  First Name
                 </label>
                 <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
+                  type="text"
+                  id="firstName"
+                  name="firstName"
+                  value={formData.firstName}
                   onChange={handleChange}
                   className="w-full text-[#6C3428] font-bold outline-none border rounded-md p-2"
                   required
@@ -109,23 +88,63 @@ const Contact = () => {
               </div>
               <div className="mb-4">
                 <label
-                  htmlFor="email"
+                  htmlFor="lastName"
                   className="block text-white text-base font-bold mb-2"
                 >
-                  Phone
+                  Last Name
                 </label>
                 <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
+                  type="text"
+                  id="lastName"
+                  name="lastName"
+                  value={formData.lastName}
                   onChange={handleChange}
                   className="w-full text-[#6C3428] font-bold outline-none border rounded-md p-2"
                   required
                 />
               </div>
-            </form>
-          </div>
+            </div>
+            <div className="mb-4">
+              <label
+                htmlFor="email"
+                className="block text-white text-base font-bold mb-2"
+              >
+                Email
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                className="w-full text-[#6C3428] font-bold outline-none border rounded-md p-2"
+                required
+              />
+            </div>
+            <div className="mb-4">
+              <label
+                htmlFor="mobile"
+                className="block text-white text-base font-bold mb-2"
+              >
+                Mobile
+              </label>
+              <input
+                type="tel"
+                id="mobile"
+                name="mobile"
+                value={formData.mobile}
+                onChange={handleChange}
+                className="w-full text-[#6C3428] font-bold outline-none border rounded-md p-2"
+                required
+              />
+            </div>
+            <button
+              type="submit"
+              className="w-full bg-blue-500 text-white p-3 rounded-md hover:bg-blue-600"
+            >
+              Submit
+            </button>
+          </form>
         </div>
       </div>
     </section>
