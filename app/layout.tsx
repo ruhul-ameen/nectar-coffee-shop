@@ -15,7 +15,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className="bg-gradient-to-r from-red-900 via-amber-700 to-red-900 px-14 2xl:px-32"
+        className="bg-gradient-to-r from-red-900 via-amber-700 to-red-900"
         suppressHydrationWarning={true}
       >
         <Navbar />

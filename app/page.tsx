@@ -6,7 +6,7 @@ import Contact from "./contact/page";
 
 export default function Home() {
   return (
-    <main>
+    <main className="px-14 2xl:px-32">
       <Hero />
       <Services />
       <About />

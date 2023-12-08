@@ -44,7 +44,7 @@ const images = [
 const Hero = () => {
   return (
     <section className="mt-10 mb-24">
-      <Carousel autoplay dots={true} draggable={false}>
+      <Carousel autoplay dots={true} draggable={false} className="-z-30">
         {images.map((imageUrl, index) => (
           <div key={index} className="max-h-full overflow-hidden">
             <div className="flex flex-col-reverse md:flex-row items-center justify-center gap-5 mb-20 md:mb-0">

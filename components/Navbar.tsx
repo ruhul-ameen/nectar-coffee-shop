@@ -11,8 +11,8 @@ const Navbar = () => {
   };
 
   return (
-    <header className="sticky top-0 left-0 lg:static">
-      <nav className="flex items-center justify-between py-4 relative">
+    <header className="bg-gradient-to-r from-red-900 via-amber-700 to-red-900 sticky top-0 left-0 lg:static">
+      <nav className="flex items-center justify-between py-4 px-14 2xl:px-32 relative">
         <div>
           <img
             src="/images/logo/logo.png"
@@ -53,13 +53,13 @@ const Navbar = () => {
 
         {isMenuOpen && (
           <>
-            <div className="absolute block lg:hidden z-10 top-0 left-0 w-2/4 h-screen py-24 ">
+            <div className="absolute block lg:hidden top-0 left-0 w-2/4 h-screen py-24 z-50 ">
               <div className="flex justify-center gap-24 xl:gap-32">
-                <div className="flex flex-col items-center gap-5 xl:gap-14">
+                <div className="flex flex-col  items-center gap-5 xl:gap-14">
                   <Link href={"/"} className="link">
                     Home
                   </Link>
-                  <Link href={"/service"} className="link">
+                  <Link href={"/distribution"} className="link">
                     Service
                   </Link>
                   <Link href={"/about"} className="link">
