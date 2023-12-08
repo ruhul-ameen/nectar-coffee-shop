@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 
-const SharedComment = ({ comment }) => {
+const SharedComment = ({ comment }: any) => {
   const { question, answer } = comment;
   const [isQuestionVisible, setIsQuestionVisible] = useState(true);
 

@@ -1,7 +1,8 @@
 "use client";
+
 import React, { useState } from "react";
 
-const CustomerComments = ({ comment }) => {
+const CustomerComments = ({ comment }: any) => {
   const { question, answer } = comment;
   const [isQuestionVisible, setIsQuestionVisible] = useState(true);
 

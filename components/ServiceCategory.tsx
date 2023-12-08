@@ -3,16 +3,16 @@
 import { Service } from "@/types";
 import React, { useState } from "react";
 
-const ServiceCategory = ({ service }) => {
+const ServiceCategory = ({ service }: any) => {
   const { image, title, category } = service;
 
   const [showServiceItems, setShowServiceItems] = useState(false);
 
   const handleShowItems = () => {
     setShowServiceItems(!showServiceItems);
-    if (handleClick) {
-      handleClick();
-    }
+    // if (handleClick) {
+    //   handleClick();
+    // }
   };
   return (
     <>
