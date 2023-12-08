@@ -138,12 +138,14 @@ const Contact: React.FC = () => {
                 required
               />
             </div>
-            <button
-              type="submit"
-              className="w-full bg-blue-500 text-white p-3 rounded-md hover:bg-blue-600"
-            >
-              Submit
-            </button>
+            <div className="flex items-center justify-center">
+              <button
+                type="submit"
+                className="text-red-900 px-3 py-2 rounded-md border-2 border-white hover:bg-white uppercase"
+              >
+                Submit
+              </button>
+            </div>
           </form>
         </div>
       </div>
