@@ -21,7 +21,7 @@ const Contact: React.FC = () => {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({
-      ...formData,
+      ...(formData as any),
       [e.target.name]: e.target.value,
     });
   };
