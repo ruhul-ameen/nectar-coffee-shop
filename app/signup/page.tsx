@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import React, { useState } from "react";
 
 interface SignUpFormData {
@@ -126,6 +127,13 @@ const SignUp = () => {
                 required
               />
             </div>
+            <p className="text-center my-4 text-xs italic">
+              {" "}
+              Have an account?{" "}
+              <Link href={"/signin"} className="text-black text-sm">
+                Log in
+              </Link>
+            </p>
             <div className="flex items-center justify-center">
               <button
                 type="submit"

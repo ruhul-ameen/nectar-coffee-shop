@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 const About = () => {
@@ -12,7 +13,7 @@ const About = () => {
             className=" w-72 h-auto rounded-full"
           />
         </div>
-        <div className="w-2/4">
+        <div className="w-full md:w-2/4">
           <p className="text-lg text-center font-semibold md:text-left">
             "Born out of a passion for exceptional coffee, our coffee shop is a
             haven where every cup tells a story of quality and craftsmanship.
@@ -20,9 +21,11 @@ const About = () => {
             connect over expertly brewed coffee, fostering community and shared
             moments of delight."
           </p>
-          <button className="border rounded-sm px-4 py-2 text-white hover:text-[#361500] hover:bg-white font-semibold mt-10">
-            Taste Now
-          </button>
+          <div className="flex items-center justify-center">
+            <button className="border rounded-sm px-4 py-2 text-white hover:text-[#361500] hover:bg-white font-semibold mt-10">
+              <Link href={"/signin"}>Taste Now</Link>
+            </button>
+          </div>
         </div>
       </div>
     </section>

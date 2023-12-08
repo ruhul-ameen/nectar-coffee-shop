@@ -1,4 +1,5 @@
 import { Carousel } from "antd";
+import Link from "next/link";
 import React from "react";
 
 const images = [
@@ -57,7 +58,7 @@ const Hero = () => {
                   </p>
                 </div>
                 <button className="border rounded-sm px-4 py-2 text-white hover:text-[#361500] hover:bg-white font-semibold">
-                  Taste Now
+                  <Link href={"/signin"}>Taste Now</Link>
                 </button>
               </div>
               <div className="max-w-max max-h-full p-5">
